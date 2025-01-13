@@ -1,5 +1,8 @@
-export default function page() {
+export default function store() {
 	return (
-		<div>page</div>
+		<div>
+			<h1>Category Page</h1>
+			<p>pagina estatica</p>
+		</div>
 	)
 }
