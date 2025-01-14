@@ -1,12 +1,13 @@
-import styles from "./Hero.module.css"
+// import styles from "./Hero.module.css"
+import styles from "./Hero.module.sass"
 
 export const Hero = () => {
 	console.log(styles);
 
 	return (
 		<section className={styles.Hero}>
-			<h1>Welcome to our store</h1>
-			<h2>Empowering your tomorrow, today!</h2>
+			<h1>Future world</h1>
+			<h2>Empowering Your Tomorrow, Today!</h2>
 		</section>
 	)
 }
