@@ -1,6 +1,6 @@
 
 export const Description = () => {
 	return (
-		<div>Description</div>
+		<section>Description</section>
 	)
 }
