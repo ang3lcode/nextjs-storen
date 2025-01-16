@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Alice } from "next/font/google";
 import { Header } from "app/Components/Shared/Header";
 import { Footer } from "app/Components/Shared/Footer";
 import "../Sass/globals.sass";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const alice = Alice({
+  weight: "400",
+  subsets: ["latin-ext"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Future World",
@@ -26,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${alice.className} `}>
         <Header />
         {children}
         <Footer />
