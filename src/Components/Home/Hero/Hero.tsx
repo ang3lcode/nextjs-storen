@@ -2,7 +2,7 @@
 import styles from "./Hero.module.sass"
 
 export const Hero = () => {
-	console.log(styles);
+	// console.log(styles);
 
 	return (
 		<section className={styles.Hero}>

@@ -2,7 +2,7 @@ import Link from "next/link"
 import styles from './Header.module.css'
 
 export const Header = () => {
-	console.log("Header");
+	// console.log("Header");
 
 	return (
 		<header>
@@ -16,6 +16,11 @@ export const Header = () => {
 					<li>
 						<Link href="/store">
 							Store
+						</Link>
+					</li>
+					<li>
+						<Link href="/test">
+							Test
 						</Link>
 					</li>
 				</ul>

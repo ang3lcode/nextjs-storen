@@ -17,7 +17,7 @@ const getProducts = async () => {
 
 export const MainProducts = async () => {
 	const products: { id: string; title: string; images: { src: string }[] }[] = await getProducts()
-	console.log(products)
+	// console.log(products)
 
 
 	return (
@@ -26,7 +26,7 @@ export const MainProducts = async () => {
 			<div className={styles.MainProducts__grid}>
 				{products?.map((product: { id: string; title: string; images: { src: string }[] }) => {
 					const imageSrc = product.images[0].src;
-					console.log("imageSrc", imageSrc);
+					// console.log("imageSrc", imageSrc);
 
 					return (
 						<article key={product.id}>
