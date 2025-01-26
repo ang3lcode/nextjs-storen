@@ -7,7 +7,7 @@ export default function GloablError({ reset }: ErrorPageProps) {
 		<main className={styles.Error}>
 			<h1 className={styles.Error__title}>Ha ocurrido un error</h1>
 			<Image
-				src='/images/error.png'
+				src='/image/image.png'
 				width={500}
 				height={500}
 				alt='Error'

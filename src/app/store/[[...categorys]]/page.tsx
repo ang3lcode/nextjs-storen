@@ -8,8 +8,8 @@ interface CategoryProps {
 export default async function CategoryPage(props: CategoryProps) {
 
 	const { categorys } = await props.params;
-	console.log('Category: ', categorys);
 
+	// throw new Error('Error: booom!'); // esto es un error 
 
 	return (
 		<div>
