@@ -1,11 +1,14 @@
 import Image from 'next/image'
 import styles from './MainProducts.module.sass'
-import { getProducts } from 'app/services/shopify'
+// import { getProducts } from 'app/services/shopify'
 
 
 export const MainProducts = async () => {
-	const products: { id: string; title: string; images: { src: string }[] }[] = await getProducts()
+	// const products: { id: string; title: string; images: { src: string }[] }[] = await getProducts()
 	// console.log(products)
+	const reponse = await fetch('http://localhost:3000/api')
+	const { products } = await reponse.json()
+
 
 
 	return (
