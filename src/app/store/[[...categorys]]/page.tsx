@@ -1,3 +1,6 @@
+import { ProductsWrapper } from "app/Components/Store/ProductsWrapper";
+import { getProducts } from "app/services/shopify";
+
 interface CategoryProps {
 	params: {
 		categorys: string[],
@@ -7,14 +10,15 @@ interface CategoryProps {
 
 export default async function CategoryPage(props: CategoryProps) {
 
+	const products = await getProducts()
 	const { categorys } = await props.params;
 
 	// throw new Error('Error: booom!'); // esto es un error 
 
 	return (
 		<div>
-			<h1>Category Page</h1>
 			<p>Category: {categorys}</p>
+			<ProductsWrapper products={products} />
 		</div>
 	);
 }
