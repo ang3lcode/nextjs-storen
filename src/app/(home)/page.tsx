@@ -4,7 +4,6 @@ export default function Home() {
   // console.log("hola devs");
   return (
     <main>
-      {/* <h1>MainProducts</h1> */}
       <MainProducts />
     </main>
   );
