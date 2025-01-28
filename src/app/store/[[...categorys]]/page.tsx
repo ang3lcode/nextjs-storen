@@ -1,24 +1,32 @@
 import { ProductsWrapper } from "app/Components/Store/ProductsWrapper";
+import { getCollectionProducts, getCollections } from "app/services/shopify/collections"
 import { getProducts } from "app/services/shopify/products";
 
 interface CategoryProps {
 	params: {
-		categorys: string[],
-		searchParams?: string,
-	};
+		categories: string[],
+	}
+	searchParams?: string
 }
 
 export default async function CategoryPage(props: CategoryProps) {
 
-	const products = await getProducts()
-	const { categorys } = await props.params;
+	// const products = await getProducts()
+	const { categories } = await props.params;
 
 	// throw new Error('Error: booom!'); // esto es un error 
 
+	let products = []
+	const collections = await getCollections()
+
+	if (categories?.length > 0) {
+		const selectedCollectionId = collections.find((collection: { handle: string; id: string }) => collection.handle === categories[0])?.id
+		products = await getCollectionProducts(selectedCollectionId)
+	} else {
+		products = await getProducts()
+	}
+	console.log('products', products)
 	return (
-		<div>
-			<p>Category: {categorys}</p>
-			<ProductsWrapper products={products} />
-		</div>
-	);
+		<ProductsWrapper products={products} />
+	)
 }
