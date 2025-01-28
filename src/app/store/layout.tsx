@@ -4,6 +4,7 @@ import styles from './StoreLayout.module.sass'
 
 export default async function Layout({ children }: { children: React.ReactNode }) {
 	const collections: Array<{ id: string, handle: string, title: string }> = await getCollections()
+	// console.log('collections', collections);
 
 	return (
 		<main className={styles.StoreLayout}>
