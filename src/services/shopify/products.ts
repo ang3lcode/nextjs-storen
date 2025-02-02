@@ -11,7 +11,7 @@ export const getProducts = async (id?: string): Promise<ProductType[]> => {
     })
     const { products } = await response.json()
 
-    const transformedProducts = products.map((product: any) => {
+    const transformedProducts = products.map((product: { id: string; variants: { admin_graphql_api_id: string; price: string; inventory_quantity: number; }[]; title: string; body_html: string; images: { src: string; }[]; handle: string; tags: string[]; }) => {
       return {
         id: product.id,
         gql_id: product.variants[0].admin_graphql_api_id,
@@ -27,5 +27,19 @@ export const getProducts = async (id?: string): Promise<ProductType[]> => {
     return transformedProducts
   } catch (error) {
     console.log(error)
+    return [];
   }
+}
+
+export const getMainProducts = async () => {
+  const response = await fetch(shopifyUrls.products.mainProducts, {
+    headers: new Headers({
+      'X-Shopify-Access-Token': env.SHOPIFY_TOKEN
+    }),
+    cache: 'no-cache'
+  })
+
+  const {products} = await response.json()
+
+  return products
 }
