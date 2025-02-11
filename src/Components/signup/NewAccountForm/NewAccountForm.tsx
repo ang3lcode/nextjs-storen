@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import styles from "./NewAccountForm.module.sass";
-import { handleCreateUser } from "app/actions";
+import { handleCreateUser } from "app/actions"
 
 export const NewAccountForm = () => {
 
