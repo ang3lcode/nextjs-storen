@@ -1,2 +1,1 @@
-export {SanitizeHTML} from "../SanitizeHTML/SanitizeHTML";
-
+export {SanitizeHTML} from './SanitizeHTML';

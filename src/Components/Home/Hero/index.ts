@@ -1,1 +1,1 @@
-export { Hero } from './Hero'; // This is the same as the above snippet
+export { Hero } from './Hero'

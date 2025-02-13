@@ -1,12 +1,12 @@
-import { Description } from "app/Components/Home/Description";
-import { Hero } from "app/Components/Home/Hero";
+import { Hero } from "app/components/home/Hero"
+import { Description } from "app/components/home/Description"
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
-	return (
-		<div>
-			<Hero />
-			<Description />
-			{children}
-		</div>
-	)
+  return (
+    <div>
+      <Hero />
+      <Description />
+      {children}
+    </div>
+  )
 }

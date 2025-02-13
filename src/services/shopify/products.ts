@@ -1,7 +1,7 @@
 import { env } from "app/config/env"
 import { shopifyUrls } from "./urls"
 
-export const getProducts = async (id?: string): Promise<ProductType[]> => {
+export const getProducts = async (id?: string) => {
   try {
     const apiUrl = id ? `${shopifyUrls.products.all}?ids=${id}` : shopifyUrls.products.all
     const response = await fetch(apiUrl, {
@@ -11,7 +11,7 @@ export const getProducts = async (id?: string): Promise<ProductType[]> => {
     })
     const { products } = await response.json()
 
-    const transformedProducts = products.map((product: { id: string; variants: { admin_graphql_api_id: string; price: string; inventory_quantity: number; }[]; title: string; body_html: string; images: { src: string; }[]; handle: string; tags: string[]; }) => {
+    const transformedProducts = products.map((product: any) => {
       return {
         id: product.id,
         gql_id: product.variants[0].admin_graphql_api_id,
@@ -27,7 +27,6 @@ export const getProducts = async (id?: string): Promise<ProductType[]> => {
     return transformedProducts
   } catch (error) {
     console.log(error)
-    return [];
   }
 }
 

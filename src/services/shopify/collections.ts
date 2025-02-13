@@ -9,7 +9,7 @@ export const getCollections = async () => {
       })
     })
     const { smart_collections } = await response.json()
-    const transformedCollections = smart_collections.map((collection: { id: string, title: string, handle: string }) => {
+    const transformedCollections = smart_collections.map((collection: any) => {
       return {
         id: collection.id,
         title: collection.title,
